@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<script>
+
+var worker = new Worker("worker_test.js");
+worker.onmessage = function(event) {//ワーカーから受け取り
+    var BB = event.data;
+    document.getElementById("output").innerHTML = "n の値は " + BB.n + "<br>l の値は " + BB.l + "<br>m の値は " + BB.m;
+}
+
+
+function pushButton (){  //ボタンをクリックした際の処理
+    var AA = {n:1, l:2, m:3};
+    worker.postMessage(AA);      // ワーカに数値を渡す
+};
+
+</script>
+
+
+<button onclick="pushButton();">WebWorker の 動作テスト</button>
+
+<div id="output" style="width:400px; height:100px; background-color: #eeeeee"></div>
+
+</body>
+</html>

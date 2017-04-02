@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<script>
+
+wkCompression = new Worker('worker.js');
+// メッセージを受け取った際の処理を定義
+wkCompression.onmessage = function(message) {
+    var data = message.data;
+    // 処理結果を受けて振り分け
+    switch (data.event) {
+        case 'start':
+            break;
+        case 'compressed':
+            // 圧縮されたデータの表示
+            outcon.setValue(data.data);
+            break;
+        case 'complete':
+            // 伸張されたデータの表示
+            outdecon.setValue(data.data);
+            break;
+    }
+};
+
+</script>
+</body>
+</html>

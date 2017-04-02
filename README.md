@@ -1,2 +1,2 @@
 # pages
-小金井市トライアスロン連合SEのページ
+koganei triathlon union pages
