@@ -1,0 +1,1380 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>小金井市トライアスロン連合ーシステム設定ファイル生成スクリプト</title>
+<!--
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+　このHTMLには、小金井市トライアスロン連合で利用するシステム設定ファイル
+を生成するスクリプトが埋め込まれています。
+　使い方が分からない方は利用しないでください。
+　なお、転用改造は無断で行っていただき構いませんが、
+小金井市トライアスロン連合は一切の責任を負いませんことをご承知願います。
+　※ 対応ブラウザはFirefox、Chrome
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+-->
+
+<!--
+Author  = "Junichi WATANUKI <junichi.watanuki@gmail.com>"
+Version = "1.7.2"
+Date    = "2011/11/02"
+-->
+
+<!--
+<link href="style.css" rel="stylesheet" type="text/css">
+-->
+
+
+<!-- 項目固有情報 -->
+<script type="application/json" id="nodedevice-json">
+{
+  "nodedevice": {
+    "description": "項目ごとの装置数",
+    "elemdata": [
+             { "case":"01-01","condition": [
+                                            {"BBR":1},
+                                            {"Router":2},
+                                            {"Console":2},
+                                            {"Namespace":2},
+                                            {"Heroku":1},
+                                            {"Repository":2}
+                                           ]
+             },
+             { "case":"01-02","condition": [
+                                            {"BBR":2},
+                                            {"Router":3},
+                                            {"Console":5},
+                                            {"Namespace":3},
+                                            {"Heroku":4},
+                                            {"AWS":2},
+                                            {"Repository":1}
+                                           ]
+             },
+             { "case":"01-03","condition": [
+                                            {"BBR":3},
+                                            {"Router":1},
+                                            {"RFID":2},
+                                            {"Console":3},
+                                            {"Namespace":1},
+                                            {"Heroku":2},
+                                            {"AWS":1},
+                                            {"Repository":5}
+                                           ]
+             },
+             { "case":"01-04","condition": [
+                                            {"BBR":2},
+                                            {"Router":1},
+                                            {"RFID":2},
+                                            {"Console":2},
+                                            {"Namespace":1},
+                                            {"Heroku":3},
+                                            {"AWS":1},
+                                            {"Repository":1}
+                                           ]
+             },
+             { "case":"01-05","condition": [
+                                            {"BBR":5},
+                                            {"Router":2},
+                                            {"RFID":2},
+                                            {"Console":3},
+                                            {"Namespace":1},
+                                            {"Heroku":2},
+                                            {"AWS":1},
+                                            {"Repository":2}
+                                           ]
+             },
+             { "case":"02-01","condition": [
+                                            {"BBR":1},
+                                            {"Router":2},
+                                            {"RFID":3},
+                                            {"Console":2},
+                                            {"Namespace":1},
+                                            {"Heroku":2},
+                                            {"AWS":3},
+                                            {"Repository":4}
+                                           ]
+             },
+             { "case":"02-02","condition": [
+                                            {"BBR":3},
+                                            {"Router":2},
+                                            {"RFID":1},
+                                            {"Console":1},
+                                            {"Namespace":2},
+                                            {"Heroku":2},
+                                            {"AWS":3},
+                                            {"Repository":3}
+                                           ]
+             },
+             { "case":"02-03","condition": [
+                                            {"BBR":4},
+                                            {"Router":4},
+                                            {"RFID":3},
+                                            {"Console":3},
+                                            {"Namespace":2},
+                                            {"Heroku":2},
+                                            {"AWS":2},
+                                            {"Repository":1}
+                                           ]
+             },
+             { "case":"02-04","condition": [
+                                            {"BBR":1},
+                                            {"Router":1},
+                                            {"RFID":2},
+                                            {"Console":2},
+                                            {"Namespace":3},
+                                            {"Heroku":3},
+                                            {"AWS":3},
+                                            {"Repository":3}
+                                           ]
+             },
+             { "case":"03-01","condition": [
+                                            {"BBR":4},
+                                            {"Router":4},
+                                            {"RFID":4},
+                                            {"Console":3},
+                                            {"Namespace":3},
+                                            {"Heroku":3},
+                                            {"AWS":2},
+                                            {"Repository":2}
+                                           ]
+             },
+             { "case":"03-02","condition": [
+                                            {"BBR":1},
+                                            {"Router":1},
+                                            {"RFID":1},
+                                            {"Console":2},
+                                            {"Namespace":2},
+                                            {"Heroku":2},
+                                            {"AWS":3},
+                                            {"Repository":3}
+                                           ]
+             },
+             { "case":"03-03","condition": [
+                                            {"BBR":3},
+                                            {"Router":3},
+                                            {"RFID":4},
+                                            {"Console":4},
+                                            {"Namespace":4},
+                                            {"Heroku":3},
+                                            {"AWS":3},
+                                            {"Repository":3}
+                                           ]
+             },
+             { "case":"04-01","condition": [
+                                            {"BBR":3},
+                                            {"Router":2},
+                                            {"RFID":2},
+                                            {"Console":2},
+                                            {"Namespace":2},
+                                            {"Heroku":1},
+                                            {"AWS":1},
+                                            {"Repository":1}
+                                           ]
+             },
+             { "case":"04-02","condition": [
+                                            {"BBR":1},
+                                            {"Router":2},
+                                            {"RFID":2},
+                                            {"Console":2},
+                                            {"Namespace":1},
+                                            {"Heroku":1},
+                                            {"AWS":2},
+                                            {"Repository":2}
+                                           ]
+             },
+             { "case":"04-03","condition": [
+                                            {"BBR":3},
+                                            {"Router":3},
+                                            {"RFID":4},
+                                            {"Console":4},
+                                            {"Namespace":3},
+                                            {"Heroku":3},
+                                            {"AWS":4},
+                                            {"Repository":4}
+                                           ]
+             },
+             { "case":"04-04","condition": [
+                                            {"BBR":3},
+                                            {"Router":3},
+                                            {"RFID":2},
+                                            {"Console":3},
+                                            {"Namespace":2},
+                                            {"Heroku":4},
+                                            {"AWS":3},
+                                            {"Repository":2}
+                                           ]
+             },
+             { "case":"04-05","condition": [
+                                            {"BBR":2},
+                                            {"Router":4},
+                                            {"RFID":2},
+                                            {"Console":1},
+                                            {"Namespace":3},
+                                            {"Heroku":1},
+                                            {"AWS":3},
+                                            {"Repository":2}
+                                           ]
+             },
+             { "case":"04-06","condition": [
+                                            {"BBR":1},
+                                            {"Router":3},
+                                            {"RFID":5},
+                                            {"Console":2},
+                                            {"Namespace":4},
+                                            {"Heroku":1},
+                                            {"AWS":3},
+                                            {"Repository":2}
+                                           ]
+             },
+             { "case":"04-07","condition": [
+                                            {"BBR":1},
+                                            {"Router":4},
+                                            {"RFID":2},
+                                            {"Console":5},
+                                            {"Namespace":2},
+                                            {"Heroku":3},
+                                            {"AWS":4},
+                                            {"Repository":2}
+                                           ]
+             },
+             { "case":"05-01","condition": [
+                                            {"BBR":3},
+                                            {"Router":1},
+                                            {"RFID":3},
+                                            {"Console":2},
+                                            {"Namespace":4},
+                                            {"Heroku":2},
+                                            {"AWS":1},
+                                            {"Repository":5}
+                                           ]
+             },
+             { "case":"05-02","condition": [
+                                            {"BBR":2},
+                                            {"Router":3},
+                                            {"RFID":2},
+                                            {"Console":4},
+                                            {"Namespace":5},
+                                            {"Heroku":3},
+                                            {"AWS":3},
+                                            {"Repository":4}
+                                           ]
+             },
+             { "case":"05-03","condition": [
+                                            {"BBR":1},
+                                            {"Router":3},
+                                            {"RFID":2},
+                                            {"Console":5},
+                                            {"Namespace":2},
+                                            {"Heroku":3},
+                                            {"AWS":1},
+                                            {"Repository":4}
+                                           ]
+             },
+             { "case":"05-04","condition": [
+                                            {"BBR":3},
+                                            {"Router":2},
+                                            {"RFID":3},
+                                            {"Console":1},
+                                            {"Namespace":2},
+                                            {"Heroku":2},
+                                            {"AWS":4},
+                                            {"Repository":4}
+                                           ]
+             }
+            ]
+  }
+}
+</script>
+
+<!-- 構成要素情報 -->
+<script type="application/json" id="BBR_element-json">
+{
+  "device01": {
+    "description": "BBR01",
+    "elemdata": [
+             { "host": "BBR6"},
+             { "user": "admin"},
+             { "path": "/home/user"},
+             { "forest": "Group18"},
+             { "tree": "Group-18"},
+             { "nwsuffix": "NW18"},
+             { "serialnumber": "serial12:34:56:78:90:ab"},
+             { "macaddress": "12:34:56:78:90:ab"},
+             { "lanaddress": "192.168.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "192.168.0.1"}
+            ]
+  },
+  "device02": {
+    "description": "BBR02",
+    "elemdata": [
+             { "host": "BBR11"},
+             { "user": "admin"},
+             { "path": "/home/guest"},
+             { "forest": "Group19"},
+             { "tree": "Group-19"},
+             { "nwsuffix": "NW19"},
+             { "serialnumber": "serial:ab:cd:ef:01:23:45"},
+             { "macaddress": "ab:cd:ef:01:23:45"},
+             { "lanaddress": "10.0.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "10.0.0.1"}
+            ]
+  },
+  "httpserver_01": {
+    "description": "BBR5号機",
+    "elemdata": [
+             { "Host": "172.18.16.1"},
+             { "Port": "8443"},
+             { "User": "root"},
+             { "Password": "Himitsu"},
+             { "LoginPrompt": "localhost login:"},
+             { "PassPrompt": "Password:"},
+             { "Prompt": "[root@localhost ~]#"}
+            ]
+  }
+}
+</script>
+
+<!-- 構成要素情報 -->
+<script type="application/json" id="Router_element-json">
+{
+  "device01": {
+    "description": "Router01",
+    "elemdata": [
+             { "host": "Router8"},
+             { "user": "admin"},
+             { "path": "/home/user"},
+             { "forest": "Group18"},
+             { "tree": "Group-18"},
+             { "nwsuffix": "NW18"},
+             { "serialnumber": "serial12:34:56:78:90:ab"},
+             { "macaddress": "12:34:56:78:90:ab"},
+             { "lanaddress": "192.168.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "192.168.0.1"}
+            ]
+  },
+  "device02": {
+    "description": "Router02",
+    "elemdata": [
+             { "host": "Router9"},
+             { "user": "admin"},
+             { "path": "/home/guest"},
+             { "forest": "Group19"},
+             { "tree": "Group-19"},
+             { "nwsuffix": "NW19"},
+             { "serialnumber": "serial:ab:cd:ef:01:23:45"},
+             { "macaddress": "ab:cd:ef:01:23:45"},
+             { "lanaddress": "10.0.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "10.0.0.1"}
+            ]
+  },
+  "httpserver_01": {
+    "description": "Router1号機",
+    "elemdata": [
+             { "Host": "172.18.30.1"},
+             { "Port": "8443"},
+             { "User": "root"},
+             { "Password": "Himitsu"},
+             { "LoginPrompt": "localhost login:"},
+             { "PassPrompt": "Password:"},
+             { "Prompt": "[root@localhost ~]#"}
+            ]
+  }
+}
+</script>
+
+<!-- 構成要素情報 -->
+<script type="application/json" id="RFID_element-json">
+{
+  "device01": {
+    "description": "RFID01",
+    "elemdata": [
+             { "host": "RFID2"},
+             { "user": "admin"},
+             { "path": "/home/user"},
+             { "forest": "Group18"},
+             { "tree": "Group-18"},
+             { "nwsuffix": "NW18"},
+             { "serialnumber": "serial12:34:56:78:90:ab"},
+             { "macaddress": "12:34:56:78:90:ab"},
+             { "lanaddress": "192.168.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "192.168.0.1"}
+            ]
+  },
+  "device02": {
+    "description": "RFID02",
+    "elemdata": [
+             { "host": "RFID3"},
+             { "user": "admin"},
+             { "path": "/home/guest"},
+             { "forest": "Group19"},
+             { "tree": "Group-19"},
+             { "nwsuffix": "NW19"},
+             { "serialnumber": "serial:ab:cd:ef:01:23:45"},
+             { "macaddress": "ab:cd:ef:01:23:45"},
+             { "lanaddress": "10.0.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "10.0.0.1"}
+            ]
+  },
+  "httpserver_01": {
+    "description": "RFID1号機",
+    "elemdata": [
+             { "Host": "172.18.30.1"},
+             { "Port": "8443"},
+             { "User": "root"},
+             { "Password": "Himitsu"},
+             { "LoginPrompt": "localhost login:"},
+             { "PassPrompt": "Password:"},
+             { "Prompt": "[root@localhost ~]#"}
+            ]
+  }
+}
+</script>
+
+
+<!-- 構成要素情報 -->
+<script type="application/json" id="Console_element-json">
+{
+  "device01": {
+    "description": "Console01",
+    "elemdata": [
+             { "host": "Console5"},
+             { "user": "admin"},
+             { "path": "/home/user"},
+             { "forest": "Group18"},
+             { "tree": "Group-18"},
+             { "nwsuffix": "NW18"},
+             { "serialnumber": "serial12:34:56:78:90:ab"},
+             { "macaddress": "12:34:56:78:90:ab"},
+             { "lanaddress": "192.168.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "192.168.0.1"}
+            ]
+  },
+  "device02": {
+    "description": "Console02",
+    "elemdata": [
+             { "host": "Console8"},
+             { "user": "admin"},
+             { "path": "/home/guest"},
+             { "forest": "Group19"},
+             { "tree": "Group-19"},
+             { "nwsuffix": "NW19"},
+             { "serialnumber": "serial:ab:cd:ef:01:23:45"},
+             { "macaddress": "ab:cd:ef:01:23:45"},
+             { "lanaddress": "10.0.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "10.0.0.1"}
+            ]
+  },
+  "httpserver_01": {
+    "description": "Consoleサーバ1号機",
+    "elemdata": [
+             { "Host": "172.18.30.1"},
+             { "Port": "8443"},
+             { "User": "root"},
+             { "Password": "Himitsu"},
+             { "LoginPrompt": "localhost login:"},
+             { "PassPrompt": "Password:"},
+             { "Prompt": "[root@localhost ~]#"}
+            ]
+  }
+}
+</script>
+
+<!-- 構成要素情報 -->
+<script type="application/json" id="Namespace_element-json">
+{
+  "device01": {
+    "description": "Namespace01",
+    "elemdata": [
+             { "host": "Namespace1"},
+             { "user": "admin"},
+             { "path": "/home/user"},
+             { "forest": "Group18"},
+             { "tree": "Group-18"},
+             { "nwsuffix": "NW18"},
+             { "serialnumber": "serial12:34:56:78:90:ab"},
+             { "macaddress": "12:34:56:78:90:ab"},
+             { "lanaddress": "192.168.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "192.168.0.1"}
+            ]
+  },
+  "device02": {
+    "description": "Namespace02",
+    "elemdata": [
+             { "host": "Namespace2"},
+             { "user": "admin"},
+             { "path": "/home/guest"},
+             { "forest": "Group19"},
+             { "tree": "Group-19"},
+             { "nwsuffix": "NW19"},
+             { "serialnumber": "serial:ab:cd:ef:01:23:45"},
+             { "macaddress": "ab:cd:ef:01:23:45"},
+             { "lanaddress": "10.0.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "10.0.0.1"}
+            ]
+  },
+  "httpserver_01": {
+    "description": "Namespace3",
+    "elemdata": [
+             { "Host": "172.18.30.1"},
+             { "Port": "8443"},
+             { "User": "root"},
+             { "Password": "Himitsu"},
+             { "LoginPrompt": "localhost login:"},
+             { "PassPrompt": "Password:"},
+             { "Prompt": "[root@localhost ~]#"}
+            ]
+  }
+}
+</script>
+
+<!-- 構成要素情報 -->
+<script type="application/json" id="Heroku_element-json">
+{
+  "device01": {
+    "description": "Heroku",
+    "elemdata": [
+             { "host": "Heroku-5"},
+             { "user": "admin"},
+             { "path": "/home/user"},
+             { "forest": "Group18"},
+             { "tree": "Group-18"},
+             { "nwsuffix": "NW18"},
+             { "serialnumber": "serial12:34:56:78:90:ab"},
+             { "macaddress": "12:34:56:78:90:ab"},
+             { "lanaddress": "192.168.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "192.168.0.1"}
+            ]
+  },
+  "device02": {
+    "description": "Heroku-8",
+    "elemdata": [
+             { "host": "Heroku-8"},
+             { "user": "admin"},
+             { "path": "/home/guest"},
+             { "forest": "Group19"},
+             { "tree": "Group-19"},
+             { "nwsuffix": "NW19"},
+             { "serialnumber": "serial:ab:cd:ef:01:23:45"},
+             { "macaddress": "ab:cd:ef:01:23:45"},
+             { "lanaddress": "10.0.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "10.0.0.1"}
+            ]
+  },
+  "httpserver_01": {
+    "description": "Heroku-10",
+    "elemdata": [
+             { "Host": "172.18.30.1"},
+             { "Port": "8443"},
+             { "User": "root"},
+             { "Password": "Himitsu"},
+             { "LoginPrompt": "localhost login:"},
+             { "PassPrompt": "Password:"},
+             { "Prompt": "[root@localhost ~]#"}
+            ]
+  }
+}
+</script>
+
+<!-- 構成要素情報 -->
+<script type="application/json" id="AWS_element-json">
+{
+  "device01": {
+    "description": "AWS",
+    "elemdata": [
+             { "host": "AWS-4"},
+             { "user": "admin"},
+             { "path": "/home/user"},
+             { "forest": "Group18"},
+             { "tree": "Group-18"},
+             { "nwsuffix": "NW18"},
+             { "serialnumber": "serial12:34:56:78:90:ab"},
+             { "macaddress": "12:34:56:78:90:ab"},
+             { "lanaddress": "192.168.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "192.168.0.1"}
+            ]
+  },
+  "device02": {
+    "description": "AWS-9",
+    "elemdata": [
+             { "host": "AWS-8"},
+             { "user": "admin"},
+             { "path": "/home/guest"},
+             { "forest": "Group19"},
+             { "tree": "Group-19"},
+             { "nwsuffix": "NW19"},
+             { "serialnumber": "serial:ab:cd:ef:01:23:45"},
+             { "macaddress": "ab:cd:ef:01:23:45"},
+             { "lanaddress": "10.0.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "10.0.0.1"}
+            ]
+  },
+  "httpserver_01": {
+    "description": "AWS-6",
+    "elemdata": [
+             { "Host": "172.18.30.1"},
+             { "Port": "8443"},
+             { "User": "root"},
+             { "Password": "Himitsu"},
+             { "LoginPrompt": "localhost login:"},
+             { "PassPrompt": "Password:"},
+             { "Prompt": "[root@localhost ~]#"}
+            ]
+  }
+}
+</script>
+
+
+<!-- 構成要素情報 -->
+<script type="application/json" id="Repository_element-json">
+{
+  "device01": {
+    "description": "Repository01",
+    "elemdata": [
+             { "host": "Repository1"},
+             { "user": "admin"},
+             { "path": "/home/user"},
+             { "forest": "Group18"},
+             { "tree": "Group-18"},
+             { "nwsuffix": "NW18"},
+             { "serialnumber": "serial12:34:56:78:90:ab"},
+             { "macaddress": "12:34:56:78:90:ab"},
+             { "lanaddress": "192.168.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "192.168.0.1"}
+            ]
+  },
+  "device02": {
+    "description": "Repository02",
+    "elemdata": [
+             { "host": "Repository2"},
+             { "user": "admin"},
+             { "path": "/home/guest"},
+             { "forest": "Group19"},
+             { "tree": "Group-19"},
+             { "nwsuffix": "NW19"},
+             { "serialnumber": "serial:ab:cd:ef:01:23:45"},
+             { "macaddress": "ab:cd:ef:01:23:45"},
+             { "lanaddress": "10.0.0.0/24"},
+             { "subnet": "24"},
+             { "lan-ip-primary": "10.0.0.1"}
+            ]
+  },
+  "httpserver_01": {
+    "description": "Repository-3",
+    "elemdata": [
+             { "Host": "Repository3"},
+             { "Port": "8443"},
+             { "User": "root"},
+             { "Password": "Himitsu"},
+             { "LoginPrompt": "localhost login:"},
+             { "PassPrompt": "Password:"},
+             { "Prompt": "[root@localhost ~]#"}
+            ]
+  }
+}
+</script>
+
+<!-- 適用パラメータ情報 -->
+<script type="application/json" id="applyparameter-json">
+{
+  "applyparameter": {
+    "description": "適用するパラメータ racecheck.vbs",
+    "elemdata": [
+             { "adminUIuser": "admin"},
+             { "integratedPotaluser": "at001"},
+             { "dhcpserveraddress": "172.16.0.254"},
+             { "powershellexecFileName": "racestart.vbs"},
+             { "dlfileURL": "http://192.0.2.254"}
+            ]
+  }
+}
+</script>
+
+<!-- 終了条件 -->
+<script type="application/json" id="exitConditions-json">
+{
+  "exitConditions": {
+    "description": "試験終了条件",
+    "elemdata": [
+             { "iteration": 5},
+             { "limitTime": "2011-04-01T12:00:00"}
+            ]
+  }
+}
+</script>
+
+<!-- サンプルJSON -->
+<script type="application/json" id="sample-json">
+{
+  "sampledata": {
+    "description": "sample",
+    "elemdata": [
+             { "attr":"iteration","value": "5"},
+             { "attr":"limitTime","value": "2011-04-01T12:00:00"}
+            ]
+  }
+}
+</script>
+
+<!-- サンプルJSON動作確認 -->
+<script>
+///var elem = document.getElementById("sample-json").textContent;
+/////console.log(elem)
+///var data = JSON.parse(elem);
+///console.log(data)
+/////console.log(data.count);
+/////console.log(elem[0].sampledata);
+///console.log(data.sampledata);
+///console.log(data.sampledata.description);
+///console.log(data.sampledata.elemdata);
+///ite = data.sampledata.elemdata;
+///console.log(ite);
+///console.log(ite[0]);
+///console.log(ite[1]);
+///console.log(ite.iteration);
+///console.log(ite["iteration"]);
+///console.log(data.sampledata["iteration"]);
+///console.log(data.sampledata.elemdata["iteration"]);
+///console.log(data.sampledata.elemdata.length);
+///console.log(data.sampledata.elemdata.indexOf("limitTime"));
+///console.log(ite.find(({attr}) => attr === 'limitTime'));
+///console.log(ite.find(({attr}) => attr === 'limitTime').value);
+</script>
+
+<!-- 項目ごとの装置数確認 -->
+<script>
+///var elemNode = document.getElementById("nodedevice-json").textContent;
+///var dataNode = JSON.parse(elemNode);
+///console.log(dataNode)
+///console.log(dataNode.nodedevice);
+///console.log(dataNode.nodedevice.description);
+/////console.log(Object.keys(dataNode.nodedevice.elemdata["case"]));
+///var keyNode = Object.keys(dataNode.nodedevice.elemdata)
+///console.log(keyNode[1]);
+/////console.log(dataNode.nodedevice.elemdata.find(({case}) => case === 'limitTime').value);
+///for(var arrNode of dataNode.nodedevice.elemdata){
+///  console.log(arrNode);
+///  console.log(arrNode.case);
+///}
+</script>
+
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ -->
+<!-- ■■■■■■■■ここから上は、json関連情報のみ。■■■■■■■■ -->
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ -->
+
+
+<script>
+function chooseFile(idDom){
+  const showOpenFileDialog = () => {
+      return new Promise(resolve => {
+          const input = document.createElement('input');
+          input.type = 'file';
+          input.accept = '.*';
+          input.onchange = event => { resolve(event.target.files[0]); };
+          input.click();
+      });
+  };
+
+  const readAsText = file => {
+      return new Promise(resolve => {
+          const reader = new FileReader();
+          var selectCharacter = document.getElementById("filecharacter");
+          var strCharacter = (selectCharacter.options[selectCharacter.selectedIndex].text).toString();
+          reader.readAsText(file,strCharacter);
+          reader.onload = () => { resolve(reader.result); };
+      });
+  };
+
+  async function openFile(id){
+    const file = await showOpenFileDialog();
+    const content = await readAsText(file);
+    var txtareaFile = document.getElementById(id);
+    txtareaFile.value = content.toString();
+  }
+  openFile(idDom);
+}
+</script>
+
+
+<script>
+function createYaml(){
+  // ymlDataに、生成する文字列を追加していき、最後にファイル出力行う。
+  var ymlData;
+  // ファイルヘッダを作成する。
+  ymlData = "system\n";
+
+  // 現在選択している項番に合わせて、生成対象の要素を集めていく。
+  // Bodyに作成済のSelect(ID:secondaryselect)の情報を利用する。
+  // 対象とする要素のIDから、textを抽出
+  var elemTargetInfo = document.getElementById("secondaryselect");
+  var strTargetInfo = (elemTargetInfo.options[elemTargetInfo.selectedIndex].text);
+  
+  // この時の必要要素を抽出する。
+  // まず、JSON(nodedevice)から、項番情報(secondaryselect)が一致するcaseを特定し、
+  // その時のconditionを配列(arrCaseInfoCondition)として保全する。
+  //
+  //// 項目固有情報を記したJSONをTextcontentとして読み込み、JSON形式にParseする。
+  var elemInfoDummy = document.getElementById("nodedevice-json").textContent;
+  var dataInfoDummy = JSON.parse(elemInfoDummy);
+  //// 取り込んだJSONを走査し、caseが現在のSelectの値と同じものを特定する。
+  for (keyNodeInfo in dataInfoDummy){
+    for (keyElemInfo in dataInfoDummy[keyNodeInfo]){
+      for (keyCaseInfo in dataInfoDummy[keyNodeInfo][keyElemInfo]){
+        if (dataInfoDummy[keyNodeInfo][keyElemInfo][keyCaseInfo].case == strTargetInfo){
+          var arrCaseInfoCondition = dataInfoDummy[keyNodeInfo][keyElemInfo][keyCaseInfo].condition;
+        }
+      }
+    }
+  }
+  
+  // Case値がSelectで指定された値の時の必要要素を、HTML上のSelect値に基づきTextareaに値を書き込む。
+  //// 
+  for (keyInfoSelect in arrCaseInfoCondition){
+    for (keyDeviceInfo in arrCaseInfoCondition[keyInfoSelect]){
+      for (intLoopCnt = 0;intLoopCnt < arrCaseInfoCondition[keyInfoSelect][keyDeviceInfo];intLoopCnt++){
+        // 対象のSelectのIDを組み立てる。
+        var idInfoSelect = keyDeviceInfo + "-" + (intLoopCnt + 1).toString() + "_select";
+        // 対象のSelectに設定されている装置名を抽出する
+        if (document.getElementById(idInfoSelect) != null){
+          var elementDeviceStr = document.getElementById(idInfoSelect);
+          var stringDeviceInfo  = (elementDeviceStr.options[elementDeviceStr.selectedIndex].text);
+          // 書き込み対象のTextareaのIDを組み立てる。
+          var idInfoTextarea = keyDeviceInfo + "-" + (intLoopCnt + 1).toString() + "_txtarea";
+          var infoTextarea = document.getElementById(idInfoTextarea);
+          ymlData += "\n" + infoTextarea.value;
+        }
+      }
+    }
+  }
+  var idFileTextarea = "loadedfile";
+  var fileTextarea = document.getElementById(idFileTextarea);
+  ymlData += "\n" + fileTextarea.value;
+  return ymlData
+}
+</script>
+
+
+<script>
+function easyOperation(){
+  const a = document.createElement('a');
+  yamlData = createYaml();
+  a.href = URL.createObjectURL(new Blob([yamlData], {type: 'text/plain'}));
+  a.download = 'hogehoge.txt';
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);}
+</script>
+
+
+<script>
+function object_array_sort(data,key,order,func){
+  //DefaultではDESC設定としておく)
+  var param_a = -1;
+  var param_b = 1;
+  if(order === 'asc'){ ;//asc指定の場合はASC設定
+    param_a = 1;
+    param_b = -1;
+  }
+  data = data.sort(function(a, b){
+    var x = a[key];
+    var y = b[key];
+    if (x > y) return param_a;
+    if (x < y) return param_b;
+    return 0;
+  });
+ func(data); // ソート後の配列を返す
+}
+</script>
+
+
+<script>
+function overWriteTextareaAll(){
+  // Bodyに作成済のTableの左側の列にあるSelectの、IDとTextを連想配列にする。
+  // というのが面倒なので、代わりに現在選択している項番情報を使って処理する。
+  // （Bodyに作成済のSelect(ID:secondaryselect)の情報を利用する。）
+  // 対象とする要素のIDから、textを抽出
+  var elemTargetItem = document.getElementById("secondaryselect");
+  var strTargetItem = (elemTargetItem.options[elemTargetItem.selectedIndex].text);
+  
+  // この時の必要要素を抽出する。
+  // まず、JSON(nodedevice)から、項番情報(secondaryselect)が一致するcaseを特定し、
+  // その時のconditionを配列(arrCaseCondition)として保全する。
+  //
+  //// 項目固有情報を記したJSONをTextcontentとして読み込み、JSON形式にParseする。
+  var elemItemDummy = document.getElementById("nodedevice-json").textContent;
+  var dataItemDummy = JSON.parse(elemItemDummy);
+  //// 取り込んだJSONを走査し、caseが現在のSelectの値と同じものを特定する。
+  for (keyNodedevice in dataItemDummy){
+    for (keyElemdata in dataItemDummy[keyNodedevice]){
+      for (keyCase in dataItemDummy[keyNodedevice][keyElemdata]){
+        if (dataItemDummy[keyNodedevice][keyElemdata][keyCase].case == strTargetItem){
+          var arrCaseCondition = dataItemDummy[keyNodedevice][keyElemdata][keyCase].condition;
+        }
+      }
+    }
+  }
+  
+  // Case値がSelectで指定された値の時の必要要素を、HTML上のSelect値に基づきTextareaに値を書き込む。
+  //// 
+  for (keySelect in arrCaseCondition){
+    for (keyDevice in arrCaseCondition[keySelect]){
+      for (intLoop = 0;intLoop < arrCaseCondition[keySelect][keyDevice];intLoop++){
+        // 対象のSelectのIDを組み立てる。
+        var idSelect = keyDevice + "-" + (intLoop + 1).toString() + "_select";
+        // 対象のSelectに設定されている装置名を抽出する
+        if (document.getElementById(idSelect) != null){
+          var elementDevice = document.getElementById(idSelect);
+          var stringDevice  = (elementDevice.options[elementDevice.selectedIndex].text);
+          // 書き込み対象のTextareaのIDを組み立てる。
+          var idTextarea = keyDevice + "-" + (intLoop + 1).toString() + "_txtarea";
+          // JSONを読み込む。
+          //// 読み込み先のJSONを取ってくる。
+          var txtjsonDevice = document.getElementById(keyDevice + "_element-json").textContent;
+          var jsonDevice    = JSON.parse(txtjsonDevice);
+          for (keyDev in jsonDevice){
+            for (keyElement in jsonDevice[keyDev]){
+              for (keyContent in jsonDevice[keyDev][keyElement]){
+                for (keyString in jsonDevice[keyDev][keyElement][keyContent]){
+                  // 読み込み先JSONの装置名(jsonDevice[keyDev].description)と
+                  // Selectにおける装置名(stringDevice)が一致したら、textareaに反映。
+                  if(jsonDevice[keyDev].description == stringDevice){
+                    if (document.getElementById(idTextarea) != null){
+                      var textarea = document.getElementById(idTextarea);
+                      textarea.value = jsonDevice[keyDev].description;
+                        var strYmlText = "";
+                      for (intAttribute=0;intAttribute<jsonDevice[keyDev].elemdata.length;intAttribute++){
+                        for (ymlData in jsonDevice[keyDev].elemdata[intAttribute]){
+                          strYmlText = strYmlText + ymlData + " :\"" + jsonDevice[keyDev].elemdata[intAttribute][ymlData] + "\"\r\n";
+                        }
+                        textarea.value = strYmlText.replace(/\r\n$/,"");
+                      }
+                      break;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</script>
+
+
+<script>
+// 現在の項目番号に合わせて、ユーザ選択エリアのテーブルの中身を作成する
+function resetElement(){
+  // 項目固有情報を記したJSONをTextcontentとして読み込み、JSON形式にParseする。
+  var elemNodeDevList = document.getElementById("nodedevice-json").textContent;
+  var dataNodeDevList = JSON.parse(elemNodeDevList);
+
+  // 中項目Selectに設定されている項目番号を抽出する
+  var elemSecondary = document.getElementById("secondaryselect");
+  var strSecondaryItem = (elemSecondary.options[elemSecondary.selectedIndex].text);
+
+
+  // ユーザ選択エリアのテーブルの中身となる配列を、arrNodeItemとして定義する。
+  var arrNodeItem;
+  
+  // 先ほどParseした項目固有情報JSON('elemdata'階層)の中身を全て走査する
+  // ※ 'elemdata'の下位階層'case'情報をkeyCaseに設定
+  for(keyCase in dataNodeDevList.nodedevice.elemdata){
+    // JSON('elemdata'階層)のcase階層に記述されている項目番号と、中項目Selectに設定されている項目番号を比較検査する。
+    if(dataNodeDevList.nodedevice.elemdata[keyCase].case == strSecondaryItem){
+      // JSON('elemdata'階層)で'keyCase'にマッチするときの、要素'condition'配列を取得する。
+      arrNodeItem = dataNodeDevList.nodedevice.elemdata[keyCase].condition;
+      break;
+    }
+  }
+
+  // Bodyに作成済のTableに作成済みの情報をクリアする。
+  tblInitial = document.getElementById("elementtable");
+
+  // Tableの子ノードを再帰的に削除する方式（時間がかかるのでこの方式はコメントアウト）
+  //while (tblInitial.childNodes.length > 0) {
+  //tblInitial.removeChild(tblInitial.firstChild);
+  //}
+  
+  // 空のダミーノードを予め作成し、既存のノードとスワップする方式（とりあえずこちらで運用）
+  // ※ ただし、DOMリンクなどが解除されるので、必要に応じて再定義が必要になる。
+  var nodeNull = tblInitial.cloneNode(false);
+  tblInitial.parentNode.replaceChild(nodeNull,tblInitial); 
+  //Bodyに作成済のTableを再定義しなおす。
+  tblInitial = document.getElementById("elementtable");
+  var tbody = document.createElement("tbody");
+  tblInitial.appendChild(tbody);
+
+  // 各項目で利用する構成要素配列('arrNodeItem')を走査し、構成要素の種類の数だけ繰り返す。
+  for(i=0;i<arrNodeItem.length; i++){
+    // 各項目ごとの構成要素[i]のkey(=構成要素名)を走査し、
+    // 構成要素の必要数(=arrNodeItem[i][key])に合わせて、Tableの行を作成する。
+    for(key in arrNodeItem[i]){
+      var tr = document.createElement("tr");
+      var td = document.createElement("td");
+      tr.id = key.toString() + "_Row-title";
+      // 構成要素タイトルを行の色を指定する。
+      tr.bgColor = "#aaeeee";
+      td.id = key.toString() + "_Col1-title";
+      // 構成要素タイトルのタイトル文字列を指定する。
+      td.appendChild(document.createTextNode(key.toString() + "定義"));
+      tr.appendChild(td);
+      var td = document.createElement("td");
+      td.id = key.toString() + "_Col2-title";
+      // 構成要素タイトルの設定数情報を指定する。
+      td.appendChild(document.createTextNode("必要設定数＝" + arrNodeItem[i][key] + "箇所"));
+      tr.appendChild(td);
+      // 構成要素タイトルを行単位で追加する。
+      tbody.appendChild(tr);
+
+      // 構成要素ごとに必要な設定数(arrNodeItem[i][key])の分だけ、設定用のSelect行を追加する。
+      for(j=0;j<arrNodeItem[i][key];j++){
+        // 設定用Select行の色を、奇数と偶数で塗り分けする。
+        var rowcolor = (function(c){if(j%2==0){return "#ddf5f8";}else{return"#ddf8f5";}}(j));
+        // Select行内で利用するインデックスの統一キーワードを作成する。
+        var strId = key.toString() + "-" + (j+1).toString();
+        // テーブル要素の定義(Selectセル)
+        //// Selectを定義
+        var sel = document.createElement("select");
+        sel.id = strId + "_select";
+        sel.name = strId + "_select";
+        //// Optionを定義
+        var opt = document.createElement("option");
+        var elemDevice = document.getElementById(key.toString() + "_element-json").textContent;
+        var dataDevice = JSON.parse(elemDevice);
+        //// SelectのOptionを定義
+        for(keyDevice in dataDevice){
+          sel.add(new Option(dataDevice[keyDevice].description));
+        }
+        //// Formを定義
+        var frm1 = document.createElement("form");
+        frm1.id = strId + "_forml";
+        frm1.appendChild(sel);
+        //// 左側のセルを定義
+        var td1 = document.createElement("td");
+        td1.id = strId + "_ColL-title";
+        td1.style.width = "230px";
+        td1.appendChild(document.createTextNode(strId + "箇所目"));
+        td1.appendChild(frm1);
+
+        // テーブル要素の定義(Textareaセル)
+        //// Textareaを定義
+        var txtarea = document.createElement("textarea");
+        txtarea.id = strId + "_txtarea";
+        txtarea.style.width = "360px";
+        txtarea.style.height = "150px";
+        txtarea.placeholder = "ここにymlに書き出す情報を記入してください。";
+        //txtarea.wrap = off;
+        //// Formを定義
+        var frm2 = document.createElement("form");
+        frm2.appendChild(txtarea);
+        frm2.id = strId + "_formr";
+        //// 右側のセルを定義
+        var td2 = document.createElement("td");
+        td2.id = strId + "_ColR-title";
+        td2.style.width = "410px";
+        td2.appendChild(document.createTextNode(strId + "箇所目の定義情報"));
+        td2.appendChild(frm2);
+
+        // テーブル要素の定義(SelectセルとTextareaセルを行として追加する)
+        //// 行を定義
+        var tr = document.createElement("tr");
+        tr.id = strId + "_title";
+        tr.bgColor = rowcolor;
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tbody.appendChild(tr);
+
+        // テーブル内のすべての要素がそろってから行う作業を記述
+        // 設定用のSelectが変更されたときのActionを定義
+        var elemSelect = document.getElementById(strId + "_select");
+        elemSelect.onchange = function(){fillTextarea(this.id);};
+        frm1.appendChild(elemSelect);
+        td1.appendChild(frm1);
+
+        // リセット後のSelect情報に基づいて、Textareaに初期値を書き込む
+        overWriteTextareaAll();
+
+        // 設定用のSelectが変更されたときに呼び出される関数を定義
+        // ここでは、設定用のSelectの値に応じて、yml出力する情報をTexteareaに書き込む
+        function fillTextarea(selectedId){
+          //対象とする要素のIDから、valueを抽出
+          var targetElement = document.getElementById(selectedId).value;
+
+          // 書き込む情報を抽出する
+          // 項目固有情報を記したJSONをTextcontentとして読み込み、JSON形式にParseする。
+          var elemNodeDevDummy = document.getElementById("nodedevice-json").textContent;
+          var dataNodeDevDummy = JSON.parse(elemNodeDevDummy);
+          // 項目固有情報に登場する要素を格納する配列を、arrNodeElemとして定義する。
+          var arrNodeElem = [];
+
+          // 先ほどParseしたJSON('elemdata'階層)の中身を全て走査する
+          for(var arrNode of dataNodeDevDummy.nodedevice.elemdata){
+            // 先ほど作成した空の配列に、項目情報('condition'階層)の大項目部分を、Pushする。
+            arrNodeElem.push(arrNode.condition);
+          }
+
+          // 項目固有情報に登場するデバイスを格納する配列を、arrNodeDeviceDumpとして定義する。
+          var arrNodeDeviceDump = [];
+          for (keyArrayOuter in arrNodeElem){
+            for (keyArrayInner in arrNodeElem[keyArrayOuter]){
+              for (keyTarget in arrNodeElem[keyArrayOuter][keyArrayInner]){
+                arrNodeDeviceDump.push(keyTarget);
+              }
+            }
+          }
+
+          // 上記で抽出したarrNodeDeviceDump(デバイスを格納する配列)から、重複を取り除く。
+          var arrNodeDeviceList = arrNodeDeviceDump.filter(function (x, i, self) {
+                                                           return self.indexOf(x) === i;
+                                                           });
+          // targetElementの情報を基にして、上記に結び付ける処理を行う。
+          for(keyDeviceList in arrNodeDeviceList){
+            var elemDevSearch = document.getElementById(arrNodeDeviceList[keyDeviceList] + "_element-json").textContent;
+            var dataDevSearch = JSON.parse(elemDevSearch);
+            // Device情報を格納するJSONに、今回変更したSelectで設定されたデバイス名が含まれているかを検査する。
+            for (keyDeviceName in dataDevSearch){
+              // DeviceのJSON('description')が、今回変更したSelectと同じだったら、、
+              if (dataDevSearch[keyDeviceName].description == targetElement){
+                // 読みだすJSONを、targetJson に格納する
+                var targetJsonName = arrNodeDeviceList[keyDeviceList];
+                break;
+              }
+            }
+          }
+          
+          //対象のテキストエリア
+          var targetId = selectedId.replace(/_select$/,"_txtarea");
+          var textarea = document.getElementById(targetId);
+          var strYmlContent ="";
+          // 対象となる「構成要素情報JSON」を読取り、yml書き込み対象データを絞り込む
+          var elemDevWrite = document.getElementById(targetJsonName + "_element-json").textContent;
+          var dataDevWrite = JSON.parse(elemDevWrite);
+          // Device情報を格納するJSONに、今回変更したSelectの箇所を特定し、対象データを抽出する
+          for (keyTargetData in dataDevWrite){
+            // DeviceのJSON('description')が、今回変更したSelectと同じだったら、、
+            if (dataDevWrite[keyTargetData].description == targetElement){
+              // 読みだすJSONを、targetJson に格納する
+              for (keyHoge in dataDevWrite[keyTargetData].elemdata){
+                for (keyText in dataDevWrite[keyTargetData].elemdata[keyHoge]){
+                  
+                  strYmlContent = strYmlContent + keyText + " :\"" + dataDevWrite[keyTargetData].elemdata[keyHoge][keyText] + "\"\r\n";
+                }
+              }
+              break;
+            }
+          }
+          textarea.value = strYmlContent.replace(/\r\n$/,"");
+        }
+      }
+    }
+  }
+}
+</script>
+
+
+<script>
+// 大項目選択用のSelect変更時のイベント関数
+function resetSecondaryItems(){
+  // 大項目用のSelectに設定されている項目番号を抽出する
+  var objMajorItem = document.majorselect.majoritem;
+  var indexMajorItem = objMajorItem.selectedIndex;
+
+  // Bodyに作成済のSelect(中項目用)を対象に、Selectオブジェクトを作成する
+  var objSecondaryItem = document.secondaryselect.secondaryitem;
+  
+  // Selectオブジェクトの中身を全てRemoveする
+  while (objSecondaryItem.childNodes.length > 0) {
+  objSecondaryItem.removeChild(objSecondaryItem.firstChild);
+  }
+  
+  // Selectオブジェクトの中身を、初期定義状態にする。
+  objSecondaryItem.add(new Option("選択して下さい",-1));
+  if (indexMajorItem != 0){
+    // 現在の大項目Selectで選択されている項目番号を抽出する。
+    strMajor = objMajorItem.options[indexMajorItem].text;
+  }
+  // 上記で抽出した大項目Select大項目番号にて、大項目番号と中項目番号の情報を含んだ、Selectを作成する。
+  createSecondaryItems(strMajor);
+  
+  // 現時点のSelect選択している大項目-中項目の状態で、ユーザ選択エリアのテーブルの中身を作成する
+  resetElement();
+}
+</script>
+
+
+<script>
+// 大項目番号と中項目番号の情報を含んだ、Selectを作成する。
+function createSecondaryItems(argMajor){
+  // 項目固有情報を記したJSONをTextcontentとして読み込み、JSON形式にParseする。
+  var elemNode = document.getElementById("nodedevice-json").textContent;
+  var dataNode = JSON.parse(elemNode);
+
+  // Bodyに作成済のSelect(中項目用)を対象に、大項目番号と中項目番号の情報をOptionとして追加する。
+  // その際、ユーザビリティ向上のため、あらかじめ指定された大項目番号('argMajor')に含まれるもののみを対象とする。
+  var selectSecondaryItems = document.getElementById("secondaryselect");
+
+  // 中項目番号までを含むリストを格納する、空の配列を作成する
+  var arrSecondaryItems = [];
+  
+  // 先ほどParseしたJSON('elemdata'階層)の中身を全て走査する
+  for(var arrNode of dataNode.nodedevice.elemdata){
+
+    // 表示対象の大項目(引数'argMajor'で定義済み)を、中項目番号までを含むリスト入力追加する。
+    if (arrNode.case.replace(/-\d\d/,"") == argMajor){
+          selectSecondaryItems.add(new Option(arrNode.case,parseInt(arrNode.case.replace(/\d\d-/,""))));
+          arrSecondaryItems.push(arrNode.case);
+    }
+  }
+
+  // 中項目番号までを含むリストを基に、項目情報をOptionとして追加する。
+  for(var strSecondaryItem of arrSecondaryItems) {
+    for(i=0;i<selectSecondaryItems.options.length; i++){
+      if (selectSecondaryItems.options[i].text == arrSecondaryItems[0]){
+        selectSecondaryItems[i].selected = true; 
+        break; 
+      }
+    }
+  }
+}
+</script>
+
+
+<script>
+// 大項目Selectの作成
+function createMajorItems(argMajor){
+  // 項目固有情報を記したJSONをTextcontentとして読み込み、JSON形式にParseする。
+  var elemNode = document.getElementById("nodedevice-json").textContent;
+  var dataNode = JSON.parse(elemNode);
+
+  // 大項目すべてを仮置き投入する、空の配列を作成する。
+  var arrMajorAll = [];
+
+  // 先ほどParseしたJSON('elemdata'階層)の中身を全て走査する
+  for(var arrNode of dataNode.nodedevice.elemdata){
+    // 先ほど作成した空の配列に、項目情報('case'階層)の大項目部分を、Pushする。
+    arrMajorAll.push(arrNode.case.replace(/-\d\d/,""));
+  }
+
+  // 上記で抽出した、すべての大項目(重複出現の可能性あり)から、重複を取り除く。
+  var arrMajorItems = arrMajorAll.filter(function (x, i, self) {
+                                         return self.indexOf(x) === i;
+                                         });
+
+  // Bodyに作成済のSelect(大項目用)を対象に、大項目情報をOptionとして追加する。
+  var selectMajorItems = document.getElementById("majorselect");
+  for(var strMajorItem of arrMajorItems) {
+    selectMajorItems.add(new Option(strMajorItem,parseInt(strMajorItem)));
+  }
+
+  // 表示対象の大項目(引数'argMajor'で定義済み)が、Selectで選択済みとなるようにする。
+  var elemTarget = document.getElementById("majorselect"); 
+  if (elemTarget){ 
+    for(i = 0; i < elemTarget.options.length; i++){ 
+      if (elemTarget.options[i].text == argMajor){ 
+            elemTarget[i].selected = true; 
+            break; 
+      }
+    }
+  }
+}
+</script>
+
+
+<script>
+// 起動時実行スクリプト
+function startup(argMajor){
+  // 大項目番号を'argMajor'始まりとし、大項目選択用のSelectを作成
+  createMajorItems(argMajor);
+  
+  // 大項目番号を'argMajor'始まりとし、中項目選択用のSelectを作成
+  createSecondaryItems(argMajor);
+  
+  // Bodyに作成済のTableを対象に、Tbodyを作成し、初期コメント'出力できない状態です。'を書き込む。
+  tblInitial = document.getElementById("elementtable");
+  var tbody = document.createElement("tbody");
+  tblInitial.appendChild(tbody);
+  var tr1 = document.createElement("tr");
+  var td1_1 = document.createElement("td");
+  td1_1.appendChild(document.createTextNode("出力できない状態です。"));
+  tr1.appendChild(td1_1);
+  tbody.appendChild(tr1); 
+
+  // 現時点のSelect選択している大項目-中項目の状態で、ユーザ選択エリアのテーブルの中身を作成する
+  resetElement();
+}
+</script>
+
+</head>
+
+<!-- 起動時実行スクリプト関数に、初期項目番号'01'を引数渡しでCall -->
+<body onload="startup('01')">
+
+
+<!-- 大項目選択用のSelectを作成 -->
+<form name="majorselect">
+<select id="majorselect" name="majoritem" onChange="resetSecondaryItems()">
+<option value="-1">選択して下さい</option>
+</select>
+</form>
+
+<!-- 中項目選択用のSelectを作成 -->
+<form name="secondaryselect">
+<select id="secondaryselect" name="secondaryitem" onChange="resetElement()">
+<option value="-1">選択して下さい</option>
+</select>
+</form>
+
+<!-- ユーザ選択エリアのテーブルを作成 -->
+<table id="elementtable">
+</table>
+
+<hr>
+
+<!-- 追加ファイル指定エリアのテーブルを作成 -->
+<table id="optionfile" style="table-layout: fixed;";>
+<tr bgcolor="#f5f8dd">
+<td width="220px";>オプションファイルチューザ</td><td width="420px";><select id="filecharacter" name="filecharacter"/><option value="1">UTF-8</option><option value="2">Shift_JIS</option><input type="button" value="ファイルを選択する。" onclick="chooseFile('loadedfile')"/></td>
+</tr>
+<tr bgcolor="#f8f5dd">
+<td>現在の指定ファイル</td><td><textarea id="loadedfile" name="loadedfile" placeholder="オプションファイルが指定されていません。" style="width: 400px; height:150px;resize: none;"></textarea></td>
+</tr>
+</table>
+
+<hr>
+
+<!-- Yaml出力エリアのテーブルを作成 -->
+<table id="ymlwriting"";>
+<tr bgcolor="#f8eefc">
+<td width="440px";>簡単出力</td><td width="200px";><input type="button" value="簡単出力ボタン" onclick="easyOperation()"/></td>
+</tr>
+<!-- 
+<tr bgcolor="#fceef8">
+<td>ディレクトリチューザを使用して出力</td><td><a href="#" onclick="difficultOperation()"><input type="button" id="download" value="高度出力ボタン"/></a></td>
+<td>ディレクトリチューザを使用して出力</td><td><input type="button" value="高度出力ボタン" onclick="difficultOperation()"/>></td>
+<a href="bar><button type="button">戻る</button></a>
+-->
+</tr>
+</table>
+
+
+</body>
+</html>
